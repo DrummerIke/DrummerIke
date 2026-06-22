@@ -7,7 +7,7 @@
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="G7" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <title>G7</title>
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="./icon-192.png" sizes="192x192" type="image/png" />
@@ -75,6 +75,12 @@
         line-height: 1.55;
       }
 
+      .note {
+        margin-bottom: 24px;
+        color: #fbbf24;
+        font-size: 0.95rem;
+      }
+
       a {
         display: inline-flex;
         align-items: center;
@@ -94,7 +100,12 @@
       <img src="./icon-192.png" alt="G7" width="96" height="96" />
       <h1>G7</h1>
       <p>
-        Добавьте эту страницу на экран «Домой». При запуске ярлыка G7 страница откроет основной сайт.
+        Добавьте именно эту страницу на экран «Домой». При запуске ярлыка G7 страница откроется как
+        приложение и перенаправит на основной сайт.
+      </p>
+      <p class="note">
+        Если ярлык уже был добавлен раньше, удалите старую иконку с экрана «Домой» и добавьте её заново после
+        обновления сайта — iPhone сохраняет настройки полноэкранного режима в момент добавления ярлыка.
       </p>
       <a href="https://sites.google.com/view/borkg7/">Открыть сайт G7</a>
     </main>
