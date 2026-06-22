@@ -81,25 +81,6 @@
         font-size: 0.95rem;
       }
 
-      .app-frame {
-        position: fixed;
-        inset: 0;
-        width: 100vw;
-        height: 100vh;
-        height: 100dvh;
-        border: 0;
-        background: #ffffff;
-      }
-
-      body.app-mode {
-        display: block;
-        min-height: 100vh;
-        min-height: 100dvh;
-        overflow: hidden;
-        padding: 0;
-        background: #111827;
-      }
-
       a {
         display: inline-flex;
         align-items: center;
@@ -120,11 +101,12 @@
       <h1>G7</h1>
       <p>
         Добавьте именно эту страницу на экран «Домой». При запуске ярлыка G7 страница откроется как
-        приложение и откроет основной сайт внутри полноэкранного окна.
+        приложение и откроет основной сайт.
       </p>
       <p class="note">
-        Если ярлык уже был добавлен раньше, удалите старую иконку с экрана «Домой» и добавьте её заново после
-        обновления сайта — iPhone сохраняет настройки полноэкранного режима в момент добавления ярлыка.
+        Если после открытия сайта видны панели Safari, это ограничение Google Sites: финальная страница открывается
+        на домене sites.google.com и не может получить fullscreen-настройки этого ярлыка. Для полного fullscreen
+        основной сайт нужно перенести в этот проект или на домен, где мы контролируем HTML.
       </p>
       <a href="https://sites.google.com/view/borkg7/">Открыть сайт G7</a>
     </main>
@@ -134,8 +116,7 @@
         window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true;
 
       if (isStandalone) {
-        document.body.classList.add("app-mode");
-        document.body.innerHTML = `<iframe class="app-frame" src="${targetUrl}" title="G7"></iframe>`;
+        window.location.href = targetUrl;
       }
     </script>
   </body>
