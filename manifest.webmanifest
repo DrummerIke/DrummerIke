@@ -1,0 +1,16 @@
+{
+  "name": "G7",
+  "short_name": "G7",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#111111",
+  "theme_color": "#111111",
+  "icons": [
+    {
+      "src": "./favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
