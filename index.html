@@ -7,13 +7,10 @@
     <meta name="application-name" content="G7" />
     <meta name="apple-mobile-web-app-title" content="G7" />
     <meta name="theme-color" content="#111111" />
-    <meta name="description" content="Переход на сайт G7" />
+    <meta name="description" content="Стартовая страница G7" />
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./favicon.svg" />
     <link rel="manifest" href="./manifest.webmanifest" />
-    <meta http-equiv="refresh" content="0; url=https://sites.google.com/view/borkg7/" />
-    <script>
-      window.location.replace('https://sites.google.com/view/borkg7/');
-    </script>
     <style>
       :root {
         color-scheme: dark;
@@ -30,7 +27,7 @@
       }
 
       main {
-        width: min(90vw, 24rem);
+        width: min(90vw, 28rem);
         text-align: center;
       }
 
@@ -48,16 +45,32 @@
         letter-spacing: -0.08em;
       }
 
-      a {
-        color: inherit;
+      .button {
+        display: inline-block;
+        margin-top: 1rem;
+        padding: 0.9rem 1.25rem;
+        border-radius: 999px;
+        background: #ffffff;
+        color: #111111;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .hint {
+        margin-top: 1rem;
+        color: #cccccc;
+        font-size: 0.95rem;
+        line-height: 1.5;
       }
     </style>
   </head>
   <body>
     <main>
       <div class="logo" aria-hidden="true">G7</div>
-      <h1>Открываем G7…</h1>
-      <p>Если переход не начался автоматически, <a href="https://sites.google.com/view/borkg7/">откройте сайт вручную</a>.</p>
+      <h1>G7</h1>
+      <p>Сначала сохраните эту страницу на экран «Домой», а затем открывайте G7 через кнопку ниже.</p>
+      <a class="button" href="https://sites.google.com/view/borkg7/">Открыть G7</a>
+      <p class="hint">Так браузер успеет показать меню «Добавить на экран Домой» для страницы с названием G7 и этой иконкой.</p>
     </main>
   </body>
 </html>
