@@ -4,6 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#111827" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="G7" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <title>G7</title>
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="./icon-192.png" sizes="192x192" type="image/png" />
@@ -21,12 +25,20 @@
         box-sizing: border-box;
       }
 
+      html,
+      body {
+        min-height: 100%;
+        margin: 0;
+        background: #111827;
+      }
+
       body {
         min-height: 100vh;
-        margin: 0;
+        min-height: 100dvh;
         display: grid;
         place-items: center;
-        padding: 24px;
+        padding: calc(24px + env(safe-area-inset-top)) calc(24px + env(safe-area-inset-right))
+          calc(24px + env(safe-area-inset-bottom)) calc(24px + env(safe-area-inset-left));
         background:
           radial-gradient(circle at top left, rgba(59, 130, 246, 0.28), transparent 34rem),
           radial-gradient(circle at bottom right, rgba(16, 185, 129, 0.22), transparent 28rem),
