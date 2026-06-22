@@ -2,7 +2,7 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#111827" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -81,6 +81,25 @@
         font-size: 0.95rem;
       }
 
+      .app-frame {
+        position: fixed;
+        inset: 0;
+        width: 100vw;
+        height: 100vh;
+        height: 100dvh;
+        border: 0;
+        background: #ffffff;
+      }
+
+      body.app-mode {
+        display: block;
+        min-height: 100vh;
+        min-height: 100dvh;
+        overflow: hidden;
+        padding: 0;
+        background: #111827;
+      }
+
       a {
         display: inline-flex;
         align-items: center;
@@ -101,7 +120,7 @@
       <h1>G7</h1>
       <p>
         Добавьте именно эту страницу на экран «Домой». При запуске ярлыка G7 страница откроется как
-        приложение и перенаправит на основной сайт.
+        приложение и откроет основной сайт внутри полноэкранного окна.
       </p>
       <p class="note">
         Если ярлык уже был добавлен раньше, удалите старую иконку с экрана «Домой» и добавьте её заново после
@@ -115,7 +134,8 @@
         window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true;
 
       if (isStandalone) {
-        window.location.replace(targetUrl);
+        document.body.classList.add("app-mode");
+        document.body.innerHTML = `<iframe class="app-frame" src="${targetUrl}" title="G7"></iframe>`;
       }
     </script>
   </body>
